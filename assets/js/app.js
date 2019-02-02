@@ -15,3 +15,12 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+
+
+// Handle alerts
+window.setTimeout(function() {
+    var x = document.getElementsByClassName("alert");
+    x[0].style.display = 'none';
+    x[1].style.display = 'none';
+}, 3000);

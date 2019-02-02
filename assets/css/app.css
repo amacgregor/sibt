@@ -3,3 +3,6 @@
 @tailwind preflight;
 @tailwind components;
 @tailwind utilities;
+
+/* Keep alerts hidden */
+.alert:empty { display: none; }
