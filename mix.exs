@@ -20,7 +20,7 @@ defmodule Sibt.MixProject do
   def application do
     [
       mod: {Sibt.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :ueberauth, :ueberauth_facebook, :ueberauth_github, :runtime_tools]
     ]
   end
 
@@ -44,6 +44,8 @@ defmodule Sibt.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:ueberauth, "~> 0.5"},
+      {:ueberauth_facebook, "~> 0.7"},
+      {:ueberauth_github, "~> 0.7"},
       {:credo, "~> 1.0"}
     ]
   end
