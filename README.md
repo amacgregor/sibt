@@ -1,20 +1,46 @@
-# Sibt
+# ShouldIBuildThat.io (SIBT.IO)
 
-To start your Phoenix server:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+## Uberauth Setup
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+### Facebook
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+https://github.com/ueberauth/ueberauth_facebook
 
-## Learn more
+1. Add Facebook to your Überauth configuration:
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+    ```elixir
+    config :ueberauth, Ueberauth,
+      providers: [
+        facebook: {Ueberauth.Strategy.Facebook, []}
+      ]
+    ```
+
+1.  Update your provider configuration (ENV.secret.exs):
+
+    ```elixir
+    config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+      client_id: System.get_env("FACEBOOK_CLIENT_ID"),
+      client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
+    ```
+    
+    
+### Github
+https://github.com/ueberauth/ueberauth_github
+
+1. Add GitHub to your Überauth configuration:
+
+    ```elixir
+    config :ueberauth, Ueberauth,
+      providers: [
+        github: {Ueberauth.Strategy.Github, []}
+      ]
+    ```
+
+1.  Update your provider configuration:
+
+    ```elixir
+    config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+      client_id: System.get_env("GITHUB_CLIENT_ID"),
+      client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+    ```

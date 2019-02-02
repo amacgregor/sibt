@@ -73,3 +73,5 @@ config :sibt, Sibt.Repo,
   database: "sibt_dev",
   hostname: "localhost",
   pool_size: 10
+
+  

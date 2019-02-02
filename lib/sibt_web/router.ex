@@ -19,6 +19,13 @@ defmodule SibtWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/auth", SibtWeb do
+    pipe_through :browser
+
+    get "/:provider", SessionController, :request
+  end
+
+
   # Other scopes may use custom stacks.
   # scope "/api", SibtWeb do
   #   pipe_through :api
