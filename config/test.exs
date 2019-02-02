@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :sibt, Sibt.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "sbit",
+  password: "sbit",
   database: "sibt_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
