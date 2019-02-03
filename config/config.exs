@@ -28,7 +28,9 @@ config :phoenix, :json_library, Jason
 # Authentication Providers
 config :ueberauth, Ueberauth,
   providers: [
-    facebook: {Ueberauth.Strategy.Facebook, []},
+    facebook: {Ueberauth.Strategy.Facebook, [
+      profile_fields: "name,email,first_name,last_name"
+    ]},
     github: {Ueberauth.Strategy.Github, []}
   ]
 
