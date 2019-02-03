@@ -92,12 +92,25 @@ config :git_ops,
       header: "Important Changes"
     ],
     style: [
-      hidden?: true
+      hidden?: false,
+      header: "Improvements"
     ],
-    test: [hidden?: false],
-    ci: [hidden?: false],
-    refactor: [hidden?: false],
-    perf: [hidden?: false]
+    test: [
+      hidden?: false,
+      header: "Improvements"
+    ],
+    ci: [
+      hidden?: false,
+      header: "Improvements"
+    ],
+    refactor: [
+      hidden?: false,
+      header: "Improvements"
+    ],
+    perf: [
+      hidden?: false,
+      header: "Improvements"
+    ]
   ],
   # Instructs the tool to manage your mix version in your `mix.exs` file
   # See below for more information
