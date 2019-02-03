@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.3.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.2.0...0.3.0) (2019-2-3)
+
+
+
+
+### Features:
+
+* versioning: move application version to variable
+
 ## [0.2.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.1.1...0.2.0) (2019-2-3)
 
 
