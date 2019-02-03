@@ -40,14 +40,14 @@ defmodule SibtWeb.ProjectControllerTest do
   describe "index" do
     test "lists all projects", %{conn: conn} do
       conn = get(conn, Routes.project_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Projects"
+      assert html_response(conn, 200) =~ "Your Projects"
     end
   end
 
   describe "new project" do
     test "renders form", %{conn: conn} do
       conn = get(conn, Routes.project_path(conn, :new))
-      assert html_response(conn, 200) =~ "New Project"
+      assert html_response(conn, 200) =~ "Create a Side Project"
     end
   end
 
@@ -64,7 +64,7 @@ defmodule SibtWeb.ProjectControllerTest do
 
     test "renders errors when data is invalid", %{conn: conn} do
       conn = post(conn, Routes.project_path(conn, :create), project: @invalid_attrs)
-      assert html_response(conn, 200) =~ "New Project"
+      assert html_response(conn, 200) =~ "Create a Side Project"
     end
   end
 
