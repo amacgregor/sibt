@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.4.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.3.2...0.4.0) (2019-2-3)
+
+
+
+
+### Features:
+
+* layout: change project display to grid
+
 ## [0.3.2](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.3.1...0.3.2) (2019-2-3)
 
 
