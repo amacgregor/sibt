@@ -1,7 +1,10 @@
 <div class="max-w-sm rounded overflow-hidden shadow-lg flex-1">
   <img class="w-full" src="https://via.placeholder.com/800x500" alt="Sunset in the mountains">
   <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2"><%= @project.title %></div>
+    <div class="font-bold text-xl mb-2">
+        <%= @project.title %>
+        <p class="text-sm text-grey-dark flex items-center">By: <%= @project.user.first_name %> <%= @project.user.last_name%></p>
+    </div>
     <p class="text-grey-darker text-base">
       <%= @project.description %>
     </p>
