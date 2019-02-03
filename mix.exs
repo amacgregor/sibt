@@ -1,10 +1,12 @@
 defmodule Sibt.MixProject do
   use Mix.Project
 
+  @version "0.2.0"
+
   def project do
     [
       app: :sibt,
-      version: "0.2.0",
+      version: @version,
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
