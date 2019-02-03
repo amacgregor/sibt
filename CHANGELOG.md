@@ -5,6 +5,17 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.3.2](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.3.1...0.3.2) (2019-2-3)
+
+
+
+
+### Bug Fixes:
+
+* remove IO.inspect call
+
+* update the project creation form and schema
+
 ## [0.3.1](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.3.0...0.3.1) (2019-2-3)
 
 
