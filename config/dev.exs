@@ -90,7 +90,14 @@ config :git_ops,
     # a section in the changelog with the header "Important Changes"
     important: [
       header: "Important Changes"
-    ]
+    ],
+    style: [
+      hidden?: true
+    ],
+    test: [ hidden?: false],
+    ci: [ hidden?: false],
+    refactor: [ hidden?: false],
+    perf: [ hidden?: false],
   ],
   # Instructs the tool to manage your mix version in your `mix.exs` file
   # See below for more information
