@@ -1,39 +1,40 @@
-<%= form_for @changeset, @action, fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+<div class="flex justify-center mt-10 xs:mx-4 sm:mx-0">
+  <%= form_for @changeset, @action, [class: "w-full max-w-md"], fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert bg-red-lighter border border-red-darker text-red-darker px-4 py-3 rounded relative">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+    <div class="bg-grey-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+      <div class="-mx-3 md:flex mb-6">
+        <div class="md:w-full px-3">
+          <%= label f, "Project Title", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+          <%= text_input f, :title , class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+          <%= error_tag f, :title %>
+        </div>
+      </div>
+      <div class="-mx-3 md:flex mb-6">
+        <div class="md:w-full px-3">
+        <%= label f, "Project Code", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+        <%= text_input f, :project_id, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+        <%= error_tag f, :project_id%>
+      </div>
+      </div>
+      <div class="-mx-3 md:flex mb-6">
+          <div class="md:w-full px-3">
+            <%= label f, "Description", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+            <%= textarea f, :description, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+            <%= error_tag f, :description %>
+          </div>
+      </div>
+      <div class="-mx-3 md:flex mb-2">
+        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+          <div>
+            <%= submit "Create Project", class: "bg-green-dark hover:bg-green-light text-white text-sm uppercase font-bold py-2 px-4 rounded shadow-md" %>
+            <%= link "Cancel", to: Routes.project_path(@conn, :index), data: [confirm: "Are you sure?"], class: "text-grey-darker text-sm uppercase font-bold no-underline px-4" %>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
-
-  <%= label f, :project_id %>
-  <%= text_input f, :project_id %>
-  <%= error_tag f, :project_id %>
-
-  <%= label f, :title %>
-  <%= text_input f, :title %>
-  <%= error_tag f, :title %>
-
-  <%= label f, :description %>
-  <%= text_input f, :description %>
-  <%= error_tag f, :description %>
-
-  <%= label f, :thumbnail %>
-  <%= text_input f, :thumbnail %>
-  <%= error_tag f, :thumbnail %>
-
-  <%= label f, :view_count %>
-  <%= number_input f, :view_count %>
-  <%= error_tag f, :view_count %>
-
-  <%= label f, :like_count %>
-  <%= number_input f, :like_count %>
-  <%= error_tag f, :like_count %>
-
-  <%= label f, :subscriber_count %>
-  <%= number_input f, :subscriber_count %>
-  <%= error_tag f, :subscriber_count %>
-
-  <div>
-    <%= submit "Save" %>
-  </div>
-<% end %>
+</div>

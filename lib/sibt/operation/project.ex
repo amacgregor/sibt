@@ -5,12 +5,12 @@ defmodule Sibt.Operation.Project do
 
   schema "projects" do
     field :description, :string
-    field :like_count, :integer
+    field :like_count, :integer, default: 0
     field :project_id, :string
-    field :subscriber_count, :integer
+    field :subscriber_count, :integer, default: 0
     field :thumbnail, :string
     field :title, :string
-    field :view_count, :integer
+    field :view_count, :integer, default: 0
     belongs_to(:user, Sibt.User)
 
     timestamps()
@@ -32,10 +32,6 @@ defmodule Sibt.Operation.Project do
       :project_id,
       :title,
       :description,
-      :thumbnail,
-      :view_count,
-      :like_count,
-      :subscriber_count
     ])
     |> unique_constraint(:project_id)
   end

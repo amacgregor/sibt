@@ -22,6 +22,7 @@ defmodule SibtWeb.ProjectController do
         |> redirect(to: Routes.project_path(conn, :show, project))
 
       {:error, %Ecto.Changeset{} = changeset} ->
+        IO.inspect changeset
         render(conn, "new.html", changeset: changeset)
     end
   end
