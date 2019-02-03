@@ -72,7 +72,7 @@ defmodule Sibt.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"],
-      release: ["git_ops.release"],
+      release: ["git_ops.release", "cmd git push --follow-tags"],
       "release.test": ["git_ops.release --dry-run"]
     ]
   end
