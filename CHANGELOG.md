@@ -5,6 +5,21 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.4.2](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.4.1...0.4.2) (2019-2-3)
+
+
+
+
+### Bug Fixes:
+
+* previously broken tests
+
+* frontend: minor display bugs on the project list
+
+### Improvements:
+
+* add username to the project cards
+
 ## [0.4.1](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.4.0...0.4.1) (2019-2-3)
 
 
