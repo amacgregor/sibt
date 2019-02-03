@@ -3,9 +3,33 @@ defmodule SibtWeb.ProjectControllerTest do
 
   alias Sibt.Operation
 
-  @create_attrs %{description: "some description", like_count: 42, project_id: "some project_id", subscriber_count: 42, thumbnail: "some thumbnail", title: "some title", view_count: 42}
-  @update_attrs %{description: "some updated description", like_count: 43, project_id: "some updated project_id", subscriber_count: 43, thumbnail: "some updated thumbnail", title: "some updated title", view_count: 43}
-  @invalid_attrs %{description: nil, like_count: nil, project_id: nil, subscriber_count: nil, thumbnail: nil, title: nil, view_count: nil}
+  @create_attrs %{
+    description: "some description",
+    like_count: 42,
+    project_id: "some project_id",
+    subscriber_count: 42,
+    thumbnail: "some thumbnail",
+    title: "some title",
+    view_count: 42
+  }
+  @update_attrs %{
+    description: "some updated description",
+    like_count: 43,
+    project_id: "some updated project_id",
+    subscriber_count: 43,
+    thumbnail: "some updated thumbnail",
+    title: "some updated title",
+    view_count: 43
+  }
+  @invalid_attrs %{
+    description: nil,
+    like_count: nil,
+    project_id: nil,
+    subscriber_count: nil,
+    thumbnail: nil,
+    title: nil,
+    view_count: nil
+  }
 
   def fixture(:project) do
     user = user_fixture()
@@ -76,6 +100,7 @@ defmodule SibtWeb.ProjectControllerTest do
     test "deletes chosen project", %{conn: conn, project: project} do
       conn = delete(conn, Routes.project_path(conn, :delete, project))
       assert redirected_to(conn) == Routes.project_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.project_path(conn, :show, project))
       end
