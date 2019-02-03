@@ -94,10 +94,10 @@ config :git_ops,
     style: [
       hidden?: true
     ],
-    test: [ hidden?: false],
-    ci: [ hidden?: false],
-    refactor: [ hidden?: false],
-    perf: [ hidden?: false],
+    test: [hidden?: false],
+    ci: [hidden?: false],
+    refactor: [hidden?: false],
+    perf: [hidden?: false]
   ],
   # Instructs the tool to manage your mix version in your `mix.exs` file
   # See below for more information

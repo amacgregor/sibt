@@ -31,7 +31,7 @@ defmodule Sibt.Operation.Project do
     |> validate_required([
       :project_id,
       :title,
-      :description,
+      :description
     ])
     |> unique_constraint(:project_id)
   end
