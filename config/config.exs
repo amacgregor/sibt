@@ -31,7 +31,9 @@ config :ueberauth, Ueberauth,
     facebook: {Ueberauth.Strategy.Facebook, [
       profile_fields: "name,email,first_name,last_name"
     ]},
-    github: {Ueberauth.Strategy.Github, []}
+    github: {Ueberauth.Strategy.Github, [
+      profile_fields: "name,email,first_name,last_name"
+    ]}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,

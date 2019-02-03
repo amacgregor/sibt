@@ -7,6 +7,7 @@ defmodule SibtWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug SibtWeb.Plugs.SetUser
   end
 
   pipeline :api do
@@ -22,6 +23,7 @@ defmodule SibtWeb.Router do
   scope "/auth", SibtWeb do
     pipe_through :browser
 
+    get "/signout", SessionController, :delete
     get "/:provider", SessionController, :request
     get "/:provider/callback", SessionController, :create
   end

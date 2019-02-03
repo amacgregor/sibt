@@ -11,7 +11,7 @@ defmodule SibtWeb.SessionController do
       first_name: auth.info.first_name,
       last_name: auth.info.last_name,
       email: auth.info.email,
-      provider: "facebook"
+      provider: Atom.to_string(auth.provider)
     }
 
     changeset = User.changeset(%User{}, user_params)
@@ -28,6 +28,12 @@ defmodule SibtWeb.SessionController do
         |> put_flash(:error, "Error signing in")
         |> redirect(to: Routes.page_path(conn, :index))
     end
+  end
+
+  def delete(conn, _params) do
+    conn
+    |> configure_session(drop: true)
+    |> redirect(to: Routes.page_path(conn, :index))
   end
 
   defp insert_or_update_user(changeset) do

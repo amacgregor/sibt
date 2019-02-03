@@ -6,12 +6,17 @@ defmodule SibtWeb.SessionControllerTest do
   alias Sibt.{Repo, User}
 
 
-  @ueberauth_auth %{
+  @ueberauth_facebook_auth %{
     credentials: %{token: "asdf12334567890"},
     info: %{email: "tony@thetiger.com", first_name: "Tony", last_name: "Stark"},
     provider: :facebook
   }
 
+  @ueberauth_github_auth %{
+    credentials: %{token: "asdf12334567890"},
+    info: %{email: "tony@thetiger.com", first_name: "Tony", last_name: "Stark"},
+    provider: :github
+  }
 
   test "module exists" do
     assert is_list(SessionController.module_info())
@@ -29,11 +34,34 @@ defmodule SibtWeb.SessionControllerTest do
 
   test "creates user from Facebook information", %{conn: conn} do
     conn = conn
-    |> assign(:ueberauth_auth, @ueberauth_auth)
+    |> assign(:ueberauth_auth, @ueberauth_facebook_auth)
     |> get("/auth/facebook/callback")
 
     users = User |> Repo.all
     assert Enum.count(users) == 1
     assert get_flash(conn, :info) == "Thank you for signing in!"
   end
+
+  test "creates user from Github information", %{conn: conn} do
+    conn = conn
+    |> assign(:ueberauth_auth, @ueberauth_github_auth)
+    |> get("/auth/github/callback")
+
+    users = User |> Repo.all
+    assert Enum.count(users) == 1
+    assert get_flash(conn, :info) == "Thank you for signing in!"
+  end
+
+  test "signs out user", %{conn: conn} do
+    user = user_fixture()
+
+    conn =
+      conn
+      |> assign(:user, user)
+      |> get("/auth/signout")
+      |> get("/")
+
+    assert conn.assigns.user == nil
+  end
+
 end

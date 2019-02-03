@@ -12,4 +12,13 @@ defmodule SibtWeb.NavigationTest do
     assert  html_response(conn, 200) =~ "Sign in with Github"
   end
 
+  test "shows a sign out link when the user is signed in", %{conn: conn} do
+    user = user_fixture()
+
+    conn = conn
+    |> assign(:user, user)
+    |> get("/")
+
+    assert html_response(conn, 200) =~ "Sign Out"
+  end
 end

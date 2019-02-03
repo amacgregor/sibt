@@ -22,6 +22,7 @@ defmodule Sibt.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Sibt.DataCase
+      import Sibt.TestHelpers
     end
   end
 

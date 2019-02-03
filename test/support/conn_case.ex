@@ -21,6 +21,8 @@ defmodule SibtWeb.ConnCase do
       use Phoenix.ConnTest
       alias SibtWeb.Router.Helpers, as: Routes
 
+      import Sibt.TestHelpers
+
       # The default endpoint for testing
       @endpoint SibtWeb.Endpoint
     end
