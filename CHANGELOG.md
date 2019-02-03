@@ -5,6 +5,19 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.4.1](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.4.0...0.4.1) (2019-2-3)
+
+
+
+
+### Bug Fixes:
+
+* update the gitops configuration
+
+### Improvements:
+
+* clean up the seeds file according to mix format
+
 ## [0.4.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.3.2...0.4.0) (2019-2-3)
 
 
