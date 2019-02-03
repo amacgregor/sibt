@@ -17,6 +17,7 @@ defmodule SibtWeb.Router do
   scope "/", SibtWeb do
     pipe_through :browser
 
+    resources "/projects", ProjectController
     get "/", PageController, :index
   end
 

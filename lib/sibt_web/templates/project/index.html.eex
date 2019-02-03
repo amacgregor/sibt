@@ -1,0 +1,38 @@
+<h1>Listing Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Thumbnail</th>
+      <th>View count</th>
+      <th>Like count</th>
+      <th>Subscriber count</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for project <- @projects do %>
+    <tr>
+      <td><%= project.project_id %></td>
+      <td><%= project.title %></td>
+      <td><%= project.description %></td>
+      <td><%= project.thumbnail %></td>
+      <td><%= project.view_count %></td>
+      <td><%= project.like_count %></td>
+      <td><%= project.subscriber_count %></td>
+
+      <td>
+        <%= link "Show", to: Routes.project_path(@conn, :show, project) %>
+        <%= link "Edit", to: Routes.project_path(@conn, :edit, project) %>
+        <%= link "Delete", to: Routes.project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Project", to: Routes.project_path(@conn, :new) %></span>

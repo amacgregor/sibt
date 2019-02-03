@@ -1,0 +1,43 @@
+<h1>Show Project</h1>
+
+<ul>
+
+  <li>
+    <strong>Project:</strong>
+    <%= @project.project_id %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @project.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @project.description %>
+  </li>
+
+  <li>
+    <strong>Thumbnail:</strong>
+    <%= @project.thumbnail %>
+  </li>
+
+  <li>
+    <strong>View count:</strong>
+    <%= @project.view_count %>
+  </li>
+
+  <li>
+    <strong>Like count:</strong>
+    <%= @project.like_count %>
+  </li>
+
+  <li>
+    <strong>Subscriber count:</strong>
+    <%= @project.subscriber_count %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.project_path(@conn, :edit, @project) %></span>
+<span><%= link "Back", to: Routes.project_path(@conn, :index) %></span>
