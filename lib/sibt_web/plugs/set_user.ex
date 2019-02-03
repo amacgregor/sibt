@@ -4,7 +4,7 @@ defmodule SibtWeb.Plugs.SetUser do
   import Plug.Conn
   import Phoenix.Controller
 
-  alias Sibt.{Repo,User}
+  alias Sibt.{Repo, User}
 
   def init(_params) do
   end
@@ -19,7 +19,7 @@ defmodule SibtWeb.Plugs.SetUser do
         user = user_id && Repo.get(User, user_id) ->
           assign(conn, :user, user)
 
-        true->
+        true ->
           assign(conn, :user, nil)
       end
     end

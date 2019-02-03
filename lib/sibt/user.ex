@@ -2,7 +2,6 @@ defmodule Sibt.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "users" do
     field :email, :string
     field :first_name, :string

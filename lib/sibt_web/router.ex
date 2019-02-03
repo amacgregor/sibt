@@ -28,7 +28,6 @@ defmodule SibtWeb.Router do
     get "/:provider/callback", SessionController, :create
   end
 
-
   # Other scopes may use custom stacks.
   # scope "/api", SibtWeb do
   #   pipe_through :api

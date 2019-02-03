@@ -5,7 +5,6 @@ defmodule SibtWeb.SessionControllerTest do
   alias SibtWeb.SessionController
   alias Sibt.{Repo, User}
 
-
   @ueberauth_facebook_auth %{
     credentials: %{token: "asdf12334567890"},
     info: %{email: "tony@thetiger.com", first_name: "Tony", last_name: "Stark"},
@@ -23,31 +22,33 @@ defmodule SibtWeb.SessionControllerTest do
   end
 
   test "redirects the user to Facebook for authentication", %{conn: conn} do
-    conn = get conn, "/auth/facebook"
+    conn = get(conn, "/auth/facebook")
     assert redirected_to(conn, 302)
   end
 
   test "redirects the user to Github for authentication", %{conn: conn} do
-    conn = get conn, "/auth/github"
+    conn = get(conn, "/auth/github")
     assert redirected_to(conn, 302)
   end
 
   test "creates user from Facebook information", %{conn: conn} do
-    conn = conn
-    |> assign(:ueberauth_auth, @ueberauth_facebook_auth)
-    |> get("/auth/facebook/callback")
+    conn =
+      conn
+      |> assign(:ueberauth_auth, @ueberauth_facebook_auth)
+      |> get("/auth/facebook/callback")
 
-    users = User |> Repo.all
+    users = User |> Repo.all()
     assert Enum.count(users) == 1
     assert get_flash(conn, :info) == "Thank you for signing in!"
   end
 
   test "creates user from Github information", %{conn: conn} do
-    conn = conn
-    |> assign(:ueberauth_auth, @ueberauth_github_auth)
-    |> get("/auth/github/callback")
+    conn =
+      conn
+      |> assign(:ueberauth_auth, @ueberauth_github_auth)
+      |> get("/auth/github/callback")
 
-    users = User |> Repo.all
+    users = User |> Repo.all()
     assert Enum.count(users) == 1
     assert get_flash(conn, :info) == "Thank you for signing in!"
   end
@@ -63,5 +64,4 @@ defmodule SibtWeb.SessionControllerTest do
 
     assert conn.assigns.user == nil
   end
-
 end

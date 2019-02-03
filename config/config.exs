@@ -28,21 +28,25 @@ config :phoenix, :json_library, Jason
 # Authentication Providers
 config :ueberauth, Ueberauth,
   providers: [
-    facebook: {Ueberauth.Strategy.Facebook, [
-      profile_fields: "name,email,first_name,last_name"
-    ]},
-    github: {Ueberauth.Strategy.Github, [
-      profile_fields: "name,email,first_name,last_name"
-    ]}
+    facebook:
+      {Ueberauth.Strategy.Facebook,
+       [
+         profile_fields: "name,email,first_name,last_name"
+       ]},
+    github:
+      {Ueberauth.Strategy.Github,
+       [
+         profile_fields: "name,email,first_name,last_name"
+       ]}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
-       client_id: System.get_env("FACEBOOK_CLIENT_ID"),
-       client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
+  client_id: System.get_env("FACEBOOK_CLIENT_ID"),
+  client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-       client_id: System.get_env("GITHUB_CLIENT_ID"),
-       client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

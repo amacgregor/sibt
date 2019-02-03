@@ -20,7 +20,13 @@ defmodule Sibt.MixProject do
   def application do
     [
       mod: {Sibt.Application, []},
-      extra_applications: [:logger, :ueberauth, :ueberauth_facebook, :ueberauth_github, :runtime_tools]
+      extra_applications: [
+        :logger,
+        :ueberauth,
+        :ueberauth_facebook,
+        :ueberauth_github,
+        :runtime_tools
+      ]
     ]
   end
 
