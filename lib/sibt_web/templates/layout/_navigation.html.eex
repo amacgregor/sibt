@@ -12,26 +12,25 @@
     </div>
 
     <div>
-          <%= if @conn.assigns[:user] do %>
-               <span class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
-                    Welcome, <%= @conn.assigns.user.first_name %>!
-               </span>
-               <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
-                 Videos
-               </a>
-               <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
-                 Add Video
-               </a>
-                       <%= link "Sign Out", to: Routes.session_path(@conn, :delete), class: "block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline" %>
-
-          <% else %>
-               <a href="/auth/facebook" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
-                 Sign in with Facebook
-               </a>
-               <a href="/auth/github" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
-                 Sign in with Github
-               </a>
-          <% end %>
+      <%= if @conn.assigns[:user] do %>
+       <span class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
+            Welcome, <%= @conn.assigns.user.first_name %>!
+       </span>
+       <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
+         Projects
+       </a>
+       <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
+         Add Project
+       </a>
+       <%= link "Sign Out", to: Routes.session_path(@conn, :delete), class: "block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline" %>
+      <% else %>
+       <a href="/auth/facebook" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
+         Sign in with Facebook
+       </a>
+       <a href="/auth/github" class="block mt-4 lg:inline-block lg:mt-0 text-grey-darkest mr-4 no-underline hover:underline">
+         Sign in with Github
+       </a>
+      <% end %>
     </div>
   </div>
   <script>
