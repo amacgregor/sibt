@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.2.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.1.1...0.2.0) (2019-2-3)
+
+
+
+
+### Features:
+
+* changelog: add the changelog to the release
+
 ## [0.1.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.1.0...0.1.0) (2019-2-3)
 
 
