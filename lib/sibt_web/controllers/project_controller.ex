@@ -5,8 +5,8 @@ defmodule SibtWeb.ProjectController do
   alias Sibt.Operation.Project
 
   def index(conn, _params) do
-    projects = Operation.list_projects()
-    render(conn, "index.html", projects: projects)
+    rows = Operation.list_projects() |> Enum.chunk_every(3)
+    render(conn, "index.html", rows: rows)
   end
 
   def new(conn, _params) do

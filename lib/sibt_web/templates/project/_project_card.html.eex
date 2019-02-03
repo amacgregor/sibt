@@ -1,0 +1,17 @@
+
+
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <img class="w-full" src="https://via.placeholder.com/800x500" alt="Sunset in the mountains">
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2"><%= @project.title %></div>
+    <p class="text-grey-darker text-base">
+      <%= @project.description %>
+    </p>
+  <%= link "Details", to: Routes.project_path(@conn, :show, @project), class: "text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-white" %>
+  </div>
+  <div class="px-6 py-4">
+    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-eye"></i> <%= @project.view_count %></span>
+    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-heart"></i> <%= @project.like_count %></span>
+    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"><i class="fas fa-user"></i> <%= @project.subscriber_count %></span>
+  </div>
+</div>
