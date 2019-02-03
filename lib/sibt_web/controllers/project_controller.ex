@@ -15,7 +15,7 @@ defmodule SibtWeb.ProjectController do
   end
 
   def create(conn, %{"project" => project_params}) do
-    case Operation.create_project(project_params) do
+    case Operation.create_project(conn.assigns.user, project_params) do
       {:ok, project} ->
         conn
         |> put_flash(:info, "Project created successfully.")

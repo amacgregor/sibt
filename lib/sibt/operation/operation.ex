@@ -18,7 +18,7 @@ defmodule Sibt.Operation do
 
   """
   def list_projects do
-    Repo.all(Project)
+    Repo.all(Project) |> Repo.preload(:user)
   end
 
   @doc """
@@ -35,7 +35,7 @@ defmodule Sibt.Operation do
       ** (Ecto.NoResultsError)
 
   """
-  def get_project!(id), do: Repo.get!(Project, id)
+  def get_project!(id), do: Repo.get!(Project, id) |> Repo.preload(:user)
 
   @doc """
   Creates a project.
@@ -49,9 +49,10 @@ defmodule Sibt.Operation do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_project(attrs \\ %{}) do
+  def create_project(user, attrs \\ %{}) do
     %Project{}
     |> Project.changeset(attrs)
+    |> Ecto.Changeset.put_assoc(:user, user)
     |> Repo.insert()
   end
 

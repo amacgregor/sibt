@@ -8,7 +8,8 @@ defmodule SibtWeb.ProjectControllerTest do
   @invalid_attrs %{description: nil, like_count: nil, project_id: nil, subscriber_count: nil, thumbnail: nil, title: nil, view_count: nil}
 
   def fixture(:project) do
-    {:ok, project} = Operation.create_project(@create_attrs)
+    user = user_fixture()
+    {:ok, project} = Operation.create_project(user, @create_attrs)
     project
   end
 

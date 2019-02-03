@@ -12,7 +12,7 @@ defmodule Sibt.Operation.Project do
     field :thumbnail, :string
     field :title, :string
     field :view_count, :integer
-    field :user_id, :id
+    belongs_to(:user, Sibt.User)
 
     timestamps()
   end
@@ -22,5 +22,6 @@ defmodule Sibt.Operation.Project do
     project
     |> cast(attrs, [:project_id, :title, :description, :thumbnail, :view_count, :like_count, :subscriber_count])
     |> validate_required([:project_id, :title, :description, :thumbnail, :view_count, :like_count, :subscriber_count])
+    |> unique_constraint(:project_id)
   end
 end

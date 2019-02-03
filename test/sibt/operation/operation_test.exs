@@ -11,10 +11,13 @@ defmodule Sibt.OperationTest do
     @invalid_attrs %{description: nil, like_count: nil, project_id: nil, subscriber_count: nil, thumbnail: nil, title: nil, view_count: nil}
 
     def project_fixture(attrs \\ %{}) do
-      {:ok, project} =
+      user = user_fixture()
+
+      project_params =
         attrs
         |> Enum.into(@valid_attrs)
-        |> Operation.create_project()
+
+      {:ok, project} = Operation.create_project(user, project_params)
 
       project
     end
@@ -29,8 +32,10 @@ defmodule Sibt.OperationTest do
       assert Operation.get_project!(project.id) == project
     end
 
-    test "create_project/1 with valid data creates a project" do
-      assert {:ok, %Project{} = project} = Operation.create_project(@valid_attrs)
+    test "create_project/2 with valid data creates a project" do
+      user = user_fixture()
+
+      assert {:ok, %Project{} = project} = Operation.create_project(user, @valid_attrs)
       assert project.description == "some description"
       assert project.like_count == 42
       assert project.project_id == "some project_id"
@@ -40,8 +45,9 @@ defmodule Sibt.OperationTest do
       assert project.view_count == 42
     end
 
-    test "create_project/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Operation.create_project(@invalid_attrs)
+    test "create_project/2 with invalid data returns error changeset" do
+      user = user_fixture()
+      assert {:error, %Ecto.Changeset{}} = Operation.create_project(user, @invalid_attrs)
     end
 
     test "update_project/2 with valid data updates the project" do
