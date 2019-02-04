@@ -2,7 +2,6 @@ defmodule SibtWeb.Plugs.SetUser do
   @moduledoc false
 
   import Plug.Conn
-  import Phoenix.Controller
 
   alias Sibt.{Repo, User}
 
