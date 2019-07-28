@@ -1,5 +1,6 @@
 defmodule SibtWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :sibt
+  use Sentry.Phoenix.Endpoint
 
   socket "/socket", SibtWeb.UserSocket,
     websocket: true,

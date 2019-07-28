@@ -1,5 +1,8 @@
 defmodule SibtWeb.Router do
   use SibtWeb, :router
+  use Plug.ErrorHandler
+  use Sentry.Plug
+
 
   pipeline :browser do
     plug :accepts, ["html"]
