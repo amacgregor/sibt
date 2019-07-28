@@ -41,6 +41,9 @@ npm-debug.log
 # variables.
 /config/*.secret.exs
 
+# Editor variables
 .idea/
 *.iml
 .env
+.vscode/
+.elixir_ls
