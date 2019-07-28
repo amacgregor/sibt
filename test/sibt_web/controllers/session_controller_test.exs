@@ -5,15 +5,15 @@ defmodule SibtWeb.SessionControllerTest do
   alias SibtWeb.SessionController
   alias Sibt.{Repo, User}
 
-  @ueberauth_facebook_auth %{
+  @ueberauth_facebook_auth %Ueberauth.Auth{
     credentials: %{token: "asdf12334567890"},
     info: %{email: "tony@thetiger.com", first_name: "Tony", last_name: "Stark"},
     provider: :facebook
   }
 
-  @ueberauth_github_auth %{
+  @ueberauth_github_auth %Ueberauth.Auth{
     credentials: %{token: "asdf12334567890"},
-    info: %{email: "tony@thetiger.com", first_name: "Tony", last_name: "Stark"},
+    info: %{email: "tony@thetiger.com", name: "Tony Stark"},
     provider: :github
   }
 
