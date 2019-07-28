@@ -1,4 +1,4 @@
-<div class="min-h-full min-w-full w-full h-auto fixed bg-cover" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.2)), url(<%= Routes.static_path(@conn, "/images/cat.jpg") %>)">
+<div class="min-h-full min-w-full w-full h-auto fixed bg-cover" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.2)), url(<%= Routes.static_path(@conn, "/images/lost-co-CmF_5GYc6c0-unsplash.jpg") %>)">
   <div class="text-center text-white pb-16">
     <h1 class="font-sans font-bold text-center mt-32 text-grey-white text-5xl" style="text-shadow: 1px 1px 2px #0a0a0a">Welcome to ShouldIBuildThat!</h1>
   </div>
