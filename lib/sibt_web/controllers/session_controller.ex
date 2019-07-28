@@ -23,9 +23,11 @@ defmodule SibtWeb.SessionController do
         |> put_session(:user_id, user.id)
         |> redirect(to: Routes.page_path(conn, :index))
 
-      {:error, _reason} ->
+      {:error, reason} ->
+        Sentry.capture_message("auth_failure", extra: %{extra: "Insert failed: #{inspect(reason.errors)}"})
+
         conn
-        |> put_flash(:error, "Error signing in")
+        |> put_flash(:error, "There was an Error during Sign in.")
         |> redirect(to: Routes.page_path(conn, :index))
     end
   end
