@@ -9,10 +9,12 @@ defmodule Sibt.Accounts do
 
   require Logger
 
-
   @spec prepare_authenticated_user_changeset(Ueberauth.Auth.t()) :: {:ok, Ecto.Changeset.t()}
-  def prepare_authenticated_user_changeset(%Ueberauth.Auth{credentials: credentials, info: info, provider: :github} = auth) do
+  def prepare_authenticated_user_changeset(
+        %Ueberauth.Auth{credentials: credentials, info: info, provider: :github} = auth
+      ) do
     names = String.split(info.name)
+
     user_params = %{
       token: credentials.token,
       first_name: Enum.at(names, 0),
@@ -24,7 +26,9 @@ defmodule Sibt.Accounts do
     {:ok, User.changeset(%User{}, user_params)}
   end
 
-  def prepare_authenticated_user_changeset(%Ueberauth.Auth{credentials: credentials, info: info, provider: :facebook} = auth) do
+  def prepare_authenticated_user_changeset(
+        %Ueberauth.Auth{credentials: credentials, info: info, provider: :facebook} = auth
+      ) do
     user_params = %{
       token: credentials.token,
       first_name: info.first_name,
@@ -60,7 +64,7 @@ defmodule Sibt.Accounts do
       %Users{}
 
   """
-  def get_users!(id), do: raise "TODO"
+  def get_users!(id), do: raise("TODO")
 
   @doc """
   Creates a users.

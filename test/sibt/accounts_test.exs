@@ -26,7 +26,6 @@ defmodule Sibt.AccountsTest do
       }
 
       {:ok, User.changeset(%User{}, user_params)}
-
     end
 
     def users_fixture(attrs \\ %{}) do
@@ -39,7 +38,8 @@ defmodule Sibt.AccountsTest do
     end
 
     test "prepare_authenticated_user_changeset/1 returns a valid changeset" do
-      assert Accounts.prepare_authenticated_user_changeset(@ueberauth_github_auth) == github_user_fixture()
+      assert Accounts.prepare_authenticated_user_changeset(@ueberauth_github_auth) ==
+               github_user_fixture()
     end
 
     test "list_users/0 returns all users" do

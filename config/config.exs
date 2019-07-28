@@ -51,7 +51,7 @@ config :ueberauth, Ueberauth.Strategy.Github.OAuth,
 config :sentry,
   dsn: "https://cbb67e5040584a42a9959d5bdb4916ff@sentry.io/1515433",
   enable_source_code_context: true,
-  root_source_code_path: File.cwd!,
+  root_source_code_path: File.cwd!(),
   included_environments: ~w(production staging),
   environment_name: System.get_env("RELEASE_LEVEL") || "development"
 
