@@ -5,6 +5,23 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.5.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.4.2...0.5.0) (2019-7-28)
+
+
+
+
+### Features:
+
+* update depencies for project
+
+### Bug Fixes:
+
+* logo is now clickable
+
+### Improvements:
+
+* warning: remove unused import from SetUser Plug
+
 ## [0.4.2](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.4.1...0.4.2) (2019-2-3)
 
 
