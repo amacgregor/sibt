@@ -5,6 +5,27 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.6.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.5.0...0.6.0) (2019-7-29)
+
+
+
+
+### Features:
+
+* refactor session controller to use accounts context
+
+* add accounts context with matching tests
+
+* monitoring: add support for sentry.io
+
+### Improvements:
+
+* only show projects for current user
+
+* list projects by user id
+
+* sentry handling auth provider errors
+
 ## [0.5.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.4.2...0.5.0) (2019-7-28)
 
 
