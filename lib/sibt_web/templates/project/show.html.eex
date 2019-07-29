@@ -21,5 +21,7 @@
 
 </div>
 
+<!--
 <span><%= link "Edit", to: Routes.project_path(@conn, :edit, @project) %></span>
 <span><%= link "Back", to: Routes.project_path(@conn, :index) %></span>
+-->
