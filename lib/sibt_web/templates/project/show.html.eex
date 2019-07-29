@@ -14,7 +14,7 @@
   </div>
   <div class="flex mb-4">
     <div class="w-5/6 bg-gray-400 h-12">
-    <%= @project.description %>
+    <%= raw(@project.description) %>
     </div>
     <div class="w-1/6 bg-gray-500 h-12"></div>
   </div>
