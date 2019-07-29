@@ -23,10 +23,12 @@ defmodule Sibt.Operation do
 
   @spec list_projects(any) :: any
   def list_projects(user_id) do
-    Repo.all from m in Project,
-    join: a in assoc(m, :user),
-    where: a.id == ^user_id,
-    preload: [user: a]
+    Repo.all(
+      from m in Project,
+        join: a in assoc(m, :user),
+        where: a.id == ^user_id,
+        preload: [user: a]
+    )
   end
 
   @doc """
