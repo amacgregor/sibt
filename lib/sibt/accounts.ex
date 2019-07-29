@@ -9,6 +9,9 @@ defmodule Sibt.Accounts do
 
   require Logger
 
+  @doc """
+  Takes a Ueberauth map and returns a valid user Changeset
+  """
   @spec prepare_authenticated_user_changeset(Ueberauth.Auth.t()) :: {:ok, Ecto.Changeset.t()}
   def prepare_authenticated_user_changeset(
         %Ueberauth.Auth{credentials: credentials, info: info, provider: :github} = auth
