@@ -5,7 +5,7 @@ defmodule Sibt.Repo.Migrations.CreateProjects do
     create table(:projects) do
       add :project_id, :string
       add :title, :string
-      add :description, :string
+      add :description, :text
       add :thumbnail, :string
       add :view_count, :integer
       add :like_count, :integer
