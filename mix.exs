@@ -56,7 +56,7 @@ defmodule Sibt.MixProject do
       {:ueberauth, "~> 0.5"},
       {:ueberauth_facebook, "~> 0.7"},
       {:ueberauth_github, "~> 0.7"},
-      {:credo, "~> 1.0"},
+      {:credo, "~> 1.0.0"},
       {:git_ops, "~> 0.6.0", only: [:dev]},
       {:faker, "~> 0.11", only: [:test, :dev]}
     ]
