@@ -5,6 +5,31 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.7.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.6.0...0.7.0) (2019-7-29)
+
+
+
+
+### Features:
+
+* autogenerate the project_id / slug
+
+* add inline wyswyg editor
+
+* add summaries for the projects
+
+### Bug Fixes:
+
+* change description to a long text field
+
+* project card should render summary
+
+* allow template to render html for description
+
+### Improvements:
+
+* update the template for project view
+
 ## [0.6.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.5.0...0.6.0) (2019-7-29)
 
 
