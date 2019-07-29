@@ -15,10 +15,17 @@
       </div>
       <div class="-mx-3 md:flex mb-6">
         <div class="md:w-full px-3">
-        <%= label f, "Project Code", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
-        <%= text_input f, :project_id, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
-        <%= error_tag f, :project_id%>
+          <%= label f, "Project Code", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+          <%= text_input f, :project_id, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+          <%= error_tag f, :project_id%>
+        </div>
       </div>
+      <div class="-mx-3 md:flex mb-6">
+        <div class="md:w-full px-3">
+          <%= label f, "Summary", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+          <%= text_input f, :summary, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+          <%= error_tag f, :summary %>
+        </div>
       </div>
       <div class="-mx-3 md:flex mb-6">
           <div class="md:w-full px-3">
@@ -38,3 +45,13 @@
     </div>
   <% end %>
 </div>
+
+
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#project_description' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
