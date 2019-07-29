@@ -5,6 +5,7 @@ defmodule Sibt.Operation.Project do
 
   schema "projects" do
     field :description, :string
+    field :summary, :string
     field :like_count, :integer, default: 0
     field :project_id, :string
     field :subscriber_count, :integer, default: 0
@@ -23,6 +24,7 @@ defmodule Sibt.Operation.Project do
       :project_id,
       :title,
       :description,
+      :summary,
       :thumbnail,
       :view_count,
       :like_count,

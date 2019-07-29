@@ -13,6 +13,8 @@
 alias Sibt.{Repo, User, Operation}
 alias Faker.{Lorem, App, Internet}
 
+alias Faker.Company.En, as: Company
+
 user_data = [
   %{
     first_name: "Allan",
@@ -41,6 +43,7 @@ Enum.each(1..10, fn x ->
   project_data = %{
     project_id: Internet.slug(),
     title: App.name(),
+    summary: Company.catch_phrase(),
     description: Lorem.sentence(10..20),
     like_count: Enum.random(0..10000),
     view_count: Enum.random(0..10000),
