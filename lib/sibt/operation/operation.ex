@@ -4,7 +4,7 @@ defmodule Sibt.Operation do
   """
 
   import Ecto.Query, warn: false
-  alias Sibt.Repo
+  alias Sibt.{Repo, User}
 
   alias Sibt.Operation.Project
 
@@ -19,6 +19,14 @@ defmodule Sibt.Operation do
   """
   def list_projects do
     Repo.all(Project) |> Repo.preload(:user)
+  end
+
+  @spec list_projects(any) :: any
+  def list_projects(user_id) do
+    Repo.all from m in Project,
+    join: a in assoc(m, :user),
+    where: a.id == ^user_id,
+    preload: [user: a]
   end
 
   @doc """
