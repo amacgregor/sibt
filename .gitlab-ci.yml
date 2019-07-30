@@ -17,7 +17,7 @@ style_format:
   stage: style_format
   script:
     - mix format --check-formatted
-    - mix credo
+    - mix credo --ignore refactor
 
 test:
   stage: test
