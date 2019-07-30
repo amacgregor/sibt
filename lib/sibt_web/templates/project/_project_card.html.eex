@@ -1,6 +1,6 @@
 <div class="max-w-sm rounded overflow-hidden shadow-lg flex-1">
   <img class="w-full" src="https://via.placeholder.com/800x500" alt="Sunset in the mountains">
-  <div class="px-6 py-4">
+  <div class="px-6 py-4 flex-row-reverse">
     <div class="font-bold text-xl mb-2">
         <%= @project.title %>
         <p class="text-sm text-grey-dark flex items-center">By: <%= @project.user.first_name %> <%= @project.user.last_name%></p>
@@ -12,9 +12,9 @@
   <div class="px-6 flex flex-row-reverse">
     <%= link "View Details", to: Routes.project_path(@conn, :show, @project), class: "text-l font-semibold rounded px-4 py-1 leading-normal bg-purple border border-purple text-white hover:bg-purple hover:text-white" %>
   </div>
-  <div class="px-6 py-4">
-    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-eye"></i> <%= @project.view_count %></span>
-    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-heart"></i> <%= @project.like_count %></span>
-    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"><i class="fas fa-user"></i> <%= @project.subscriber_count %></span>
+  <div class="px-6 py-4 flex items-end">
+    <span class="flex-1 bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-eye"></i> <%= @project.view_count %></span>
+    <span class="flex-1 bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-heart"></i> <%= @project.like_count %></span>
+    <span class="flex-1 bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"><i class="fas fa-user"></i> <%= @project.subscriber_count %></span>
   </div>
 </div>

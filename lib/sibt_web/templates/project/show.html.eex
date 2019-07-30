@@ -6,11 +6,11 @@
         <p><%= @project.summary %></p>
       </div>
     </div>
-    <div class="flex mb-4">
-      <div class="w-full h-12">
-          <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-eye"></i> <%= @project.view_count %></span>
-          <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-heart"></i> <%= @project.like_count %></span>
-          <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"><i class="fas fa-user"></i> <%= @project.subscriber_count %></span>
+    <div class="flex items-end">
+      <div class="w-full h-12 flex items-end">
+          <span class="flex-1 bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-eye"></i> <%= @project.view_count %></span>
+          <span class="flex-1 bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-heart"></i> <%= @project.like_count %></span>
+          <span class="flex-1 bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"><i class="fas fa-user"></i> <%= @project.subscriber_count %></span>
       </div>
     </div>
   </div>
