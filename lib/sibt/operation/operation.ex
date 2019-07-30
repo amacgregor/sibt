@@ -18,7 +18,9 @@ defmodule Sibt.Operation do
 
   """
   def list_projects do
-    Repo.all(Project) |> Repo.preload(:user)
+    Project
+    |> Repo.all()
+    |> Repo.preload(:user)
   end
 
   @spec list_projects(any) :: any
