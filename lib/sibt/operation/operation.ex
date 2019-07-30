@@ -47,7 +47,11 @@ defmodule Sibt.Operation do
       ** (Ecto.NoResultsError)
 
   """
-  def get_project!(id), do: Repo.get!(Project, id) |> Repo.preload(:user)
+  def get_project!(id) do
+    id
+    |> (&Repo.get!(Project, &1)).()
+    |> Repo.preload(:user)
+  end
 
   @doc """
   Creates a project.
