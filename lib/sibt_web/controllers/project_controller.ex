@@ -6,6 +6,7 @@ defmodule SibtWeb.ProjectController do
 
   def index(conn, _params) do
     session = get_session(conn, :user_id)
+
     rows =
       session
       |> Operation.list_projects()
