@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.8.1](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.8.0...0.8.1) (2019-7-31)
+
+
+
+
+### Bug Fixes:
+
+* ignore unused variable
+
 ## [0.8.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.7.0...0.8.0) (2019-7-31)
 
 
