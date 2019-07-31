@@ -10,6 +10,7 @@ defmodule SibtWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug SibtWeb.Plugs.SetUser
+    plug SibtWeb.Plugs.SetViewRegistry
   end
 
   pipeline :api do
@@ -19,8 +20,9 @@ defmodule SibtWeb.Router do
   scope "/", SibtWeb do
     pipe_through :browser
 
-    resources "/projects", ProjectController
+    resources "/projects", ProjectController, except: [:show]
     get "/", PageController, :index
+    get "/project/:project_code", ProjectController, :show
   end
 
   scope "/auth", SibtWeb do

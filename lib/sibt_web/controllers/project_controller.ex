@@ -4,11 +4,13 @@ defmodule SibtWeb.ProjectController do
   alias Sibt.Operation
   alias Sibt.Operation.Project
 
+  plug SibtWeb.Plugs.RegisterView when action in [:show]
+
   def index(conn, _params) do
-    session = get_session(conn, :user_id)
+    current_user = conn.assigns[:user]
 
     rows =
-      session
+      current_user.id
       |> Operation.list_projects()
       |> Enum.chunk_every(3)
 
@@ -34,6 +36,11 @@ defmodule SibtWeb.ProjectController do
 
   def show(conn, %{"id" => id}) do
     project = Operation.get_project!(id)
+    render(conn, "show.html", project: project)
+  end
+
+  def show(conn, %{"project_code" => project_code}) do
+    project = Operation.get_project_by_code!(project_code)
     render(conn, "show.html", project: project)
   end
 
