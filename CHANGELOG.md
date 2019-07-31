@@ -5,6 +5,49 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.8.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.7.0...0.8.0) (2019-7-31)
+
+
+
+
+### Improvements:
+
+* ignore refactor checks from pipeline
+
+### Features:
+
+* use project code instead of ids
+
+* add additional plugs for view tracking
+
+* add ability to get project by code and auto increment view count
+
+### Bug Fixes:
+
+* documentation for Plug module
+
+### Improvements:
+
+* cleanup for mix format
+
+* change get_project! for credo feedback
+
+* fix the test to account for the new show template
+
+* index action according to credo
+
+* project list according to credo
+
+### Improvements:
+
+* fix layout for project view
+
+* update layout for project detail view
+
+### Improvements:
+
+* add feature definition in Gherkin
+
 ## [0.7.0](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.6.0...0.7.0) (2019-7-29)
 
 
