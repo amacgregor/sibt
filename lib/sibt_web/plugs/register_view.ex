@@ -12,7 +12,7 @@ defmodule SibtWeb.Plugs.RegisterView do
   def init(_params) do
   end
 
-  def call(conn, params) do
+  def call(conn, _params) do
     views_map = conn.assigns[:views]
     current_page = conn.params["project_code"]
 
