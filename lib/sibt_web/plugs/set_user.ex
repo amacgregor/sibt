@@ -1,5 +1,7 @@
 defmodule SibtWeb.Plugs.SetUser do
-  @moduledoc false
+  @moduledoc """
+  A plug that sets the current user automatically
+  """
 
   import Plug.Conn
 
