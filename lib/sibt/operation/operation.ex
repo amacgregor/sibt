@@ -54,6 +54,32 @@ defmodule Sibt.Operation do
   end
 
   @doc """
+  Get a Single project by the project_id / project_code
+
+  Raises `Ecto.NoResultsError` if the Project does not exist.
+
+  ## Examples
+
+      iex> get_project_by_code!("valid_code")
+      %Project{}
+
+      iex> get_project_by_code!("invalid_code")
+      ** (Ecto.NoResultsError)
+
+  """
+  @spec get_project_by_code!(any) :: nil | [%{optional(atom) => any}] | %{optional(atom) => any}
+  def get_project_by_code!(code) do
+    code
+    |> (&Repo.get_by!(Project, project_id: &1)).()
+    |> Repo.preload(:user)
+  end
+
+  def increment_project_view_counter(code) do
+    from(p in Project, where: p.project_id == ^code, update: [inc: [view_count: 1]])
+    |> Repo.update_all([])
+  end
+
+  @doc """
   Creates a project.
 
   ## Examples
