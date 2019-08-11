@@ -58,7 +58,11 @@ defmodule Sibt.MixProject do
       {:ueberauth_github, "~> 0.7"},
       {:credo, "~> 1.0.0"},
       {:git_ops, "~> 0.6.0", only: [:dev]},
-      {:faker, "~> 0.11", only: [:test, :dev]}
+      {:faker, "~> 0.11", only: [:test, :dev]},
+      {:ex_check, ">= 0.0.0", only: :dev, runtime: false},
+      {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:sobelow, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
