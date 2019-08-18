@@ -13,6 +13,7 @@ config :sibt,
 # Configures the endpoint
 config :sibt, SibtWeb.Endpoint,
   url: [host: "localhost"],
+  http: [port: System.get_env("PORT") || 4000],
   secret_key_base: "xWDRTt86de00RBMad/z9EkRbxy8vy+4aJVvRLFA2TMW0DKYgYAymcght2OkUj07N",
   render_errors: [view: SibtWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Sibt.PubSub, adapter: Phoenix.PubSub.PG2]
