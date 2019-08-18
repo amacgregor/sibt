@@ -7,7 +7,7 @@ defmodule SibtWeb.Plugs.RegisterView do
 
   require Logger
 
-  alias Sibt.{Repo, User, Operation}
+  alias Sibt.Operation
 
   def init(_params) do
   end

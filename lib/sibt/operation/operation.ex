@@ -4,7 +4,7 @@ defmodule Sibt.Operation do
   """
 
   import Ecto.Query, warn: false
-  alias Sibt.{Repo, User}
+  alias Sibt.Repo
 
   alias Sibt.Operation.Project
 
@@ -74,6 +74,7 @@ defmodule Sibt.Operation do
     |> Repo.preload(:user)
   end
 
+  @spec increment_project_view_counter(any) :: any
   def increment_project_view_counter(code) do
     from(p in Project, where: p.project_id == ^code, update: [inc: [view_count: 1]])
     |> Repo.update_all([])
