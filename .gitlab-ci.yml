@@ -2,6 +2,13 @@ image: elixir:latest
 
 variables:
   MIX_ENV: "test"
+  POSTGRES_DB: sibt_test
+  POSTGRES_HOST: postgres
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: "postgres"
+
+services:
+  - postgres:latest
 
 stages:
   - style_format
@@ -13,6 +20,7 @@ before_script:
   - mix local.hex --force
   - mix local.rebar --force
   - mix deps.get --only test
+  - mix ecto.setup
 
 style_format:
   stage: style_format
