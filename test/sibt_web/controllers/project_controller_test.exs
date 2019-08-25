@@ -6,7 +6,7 @@ defmodule SibtWeb.ProjectControllerTest do
   @create_attrs %{
     description: "some description",
     like_count: 42,
-    project_id: "some project_id",
+    project_id: "some-project-id",
     subscriber_count: 42,
     thumbnail: "some thumbnail",
     title: "some title",
@@ -15,7 +15,7 @@ defmodule SibtWeb.ProjectControllerTest do
   @update_attrs %{
     description: "some updated description",
     like_count: 43,
-    project_id: "some updated project_id",
+    project_id: "some-project-id",
     subscriber_count: 43,
     thumbnail: "some updated thumbnail",
     title: "some updated title",
@@ -55,7 +55,7 @@ defmodule SibtWeb.ProjectControllerTest do
     test "redirects to show when data is valid", %{conn: conn} do
       conn = post(conn, Routes.project_path(conn, :create), project: @create_attrs)
 
-      assert %{id: id} = redirected_params(conn)
+      assert %{project_code: id} = redirected_params(conn)
       assert redirected_to(conn) == Routes.project_path(conn, :show, id)
 
       conn = get(conn, Routes.project_path(conn, :show, id))
@@ -82,9 +82,9 @@ defmodule SibtWeb.ProjectControllerTest do
 
     test "redirects when data is valid", %{conn: conn, project: project} do
       conn = put(conn, Routes.project_path(conn, :update, project), project: @update_attrs)
-      assert redirected_to(conn) == Routes.project_path(conn, :show, project)
+      assert redirected_to(conn) == Routes.project_path(conn, :show, project.project_id)
 
-      conn = get(conn, Routes.project_path(conn, :show, project))
+      conn = get(conn, Routes.project_path(conn, :show, project.project_id))
       assert html_response(conn, 200) =~ "some updated description"
     end
 
