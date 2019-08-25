@@ -19,8 +19,14 @@ style_format:
     - mix format --check-formatted
     - mix credo --ignore refactor
 
+coverage:
+  stage: coverave
+  script:
+    - mix coveralls
+
 test:
   stage: test
   script:
+    - mix ecto.setup
     - mix test
 

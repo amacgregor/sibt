@@ -10,6 +10,8 @@ defmodule Sibt.MixProject do
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test, "coveralls.post": :test, "coveralls.html": :test],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -57,6 +59,7 @@ defmodule Sibt.MixProject do
       {:ueberauth_facebook, "~> 0.7"},
       {:ueberauth_github, "~> 0.7"},
       {:credo, "~> 1.0.0"},
+      {:excoveralls, "~> 0.11.2", only: :test},
       {:git_ops, "~> 0.6.0", only: [:dev]},
       {:faker, "~> 0.11", only: [:test, :dev]},
       {:ex_check, ">= 0.0.0", only: :dev, runtime: false},
