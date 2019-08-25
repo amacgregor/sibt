@@ -1,9 +1,11 @@
 # ShouldIBuildThat.io (SIBT.IO)
+[![pipeline status](https://gitlab.com/bloccsio/shouldibuildthat/badges/master/pipeline.svg)](https://gitlab.com/bloccsio/shouldibuildthat/commits/master)
+[![coverage report](https://gitlab.com/bloccsio/shouldibuildthat/badges/master/coverage.svg)](https://gitlab.com/bloccsio/shouldibuildthat/commits/master)
 
 # Introduction
 - Add your project logo.
 - Write a short introduction to the project.
-- If you are using badges, add them here.
+- If you are using badges, add them here
 
 ## :ledger: Index
 
