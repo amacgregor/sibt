@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :sibt, Sibt.Repo,
-  username: "sbit",
-  password: "sbit",
-  database: "sibt_test",
-  hostname: "localhost",
+  username: System.get_env("POSTGRES_USER") || "postgres",
+  password: System.get_env("POSTGRES_PASSWORD") || "postgres",
+  database: System.get_env("POSTGRES_DB") || "sbit_test",
+  hostname: System.get_env("POSTGRES_HOST") || "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

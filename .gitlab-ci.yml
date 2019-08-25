@@ -1,14 +1,14 @@
 image: elixir:latest
 
+services:
+  - postgres:latest
+
 variables:
   MIX_ENV: "test"
   POSTGRES_DB: sibt_test
   POSTGRES_HOST: postgres
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: "postgres"
-
-services:
-  - postgres:latest
 
 stages:
   - style_format
