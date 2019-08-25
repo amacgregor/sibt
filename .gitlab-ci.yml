@@ -5,6 +5,7 @@ variables:
 
 stages:
   - style_format
+  - coverage
   - test
 
 before_script:
@@ -20,7 +21,7 @@ style_format:
     - mix credo --ignore refactor
 
 coverage:
-  stage: coverave
+  stage: coverage
   script:
     - mix coveralls
 
