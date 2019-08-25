@@ -1,4 +1,7 @@
 defmodule SibtWeb.Plugs.SetViewRegistry do
+  @moduledoc """
+  Track the view counter as part of the session data
+  """
   import Plug.Conn
 
   def init(_params) do
