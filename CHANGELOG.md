@@ -5,6 +5,59 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.8.2](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.8.1...0.8.2) (2019-8-26)
+
+
+
+
+### Improvements:
+
+* fix last stage for the ci testing
+
+* latest attempt to fix
+
+* clean up the setup of the stages
+
+* add setup stage
+
+* fix the build pipeline
+
+* fix dependency on postgres
+
+* add support for test coverage
+
+### Improvements:
+
+* add template for the README
+
+### Bug Fixes:
+
+* all unit tests are passing
+
+### Improvements:
+
+* update mix format
+
+### Improvements:
+
+* implement account context user methods
+
+* remove unused dependencies
+
+### Improvements:
+
+* updates from mix formatter
+
+### Improvements:
+
+* remove key TODO
+
+* disable broken test due to user session dependency
+
+* fix project controller tests
+
+* add ex_check initial configuration
+
 ## [0.8.1](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.8.0...0.8.1) (2019-7-31)
 
 
