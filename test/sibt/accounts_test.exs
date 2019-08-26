@@ -6,9 +6,19 @@ defmodule Sibt.AccountsTest do
   describe "users" do
     alias Sibt.User
 
-    @valid_attrs %{}
+    @valid_attrs %{
+      email: "tony@thetiger.com",
+      first_name: "Tony",
+      last_name: "Stark",
+      provider: "github",
+      token: "asdf12334567890"
+    }
     @update_attrs %{}
-    @invalid_attrs %{}
+    @invalid_attrs %{
+      email: "",
+      first_name: "",
+      last_name: ""
+    }
 
     @ueberauth_github_auth %Ueberauth.Auth{
       credentials: %{token: "asdf12334567890"},

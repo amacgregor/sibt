@@ -4,7 +4,7 @@ defmodule Sibt.Accounts do
   """
 
   import Ecto.Query, warn: false
-  alias Sibt.User
+  alias Sibt.{User, Repo}
 
   require Logger
 
@@ -52,7 +52,8 @@ defmodule Sibt.Accounts do
 
   """
   def list_users do
-    raise "TODO"
+    User
+    |> Repo.all()
   end
 
   @doc """
@@ -66,7 +67,10 @@ defmodule Sibt.Accounts do
       %Users{}
 
   """
-  def get_users!(id), do: raise("TODO")
+  def get_users!(id) do
+    id
+    |> (&Repo.get!(User, &1)).()
+  end
 
   @doc """
   Creates a users.
@@ -81,7 +85,9 @@ defmodule Sibt.Accounts do
 
   """
   def create_users(attrs \\ %{}) do
-    raise "TODO"
+    %User{}
+    |> User.changeset(attrs)
+    |> Repo.insert()
   end
 
   @doc """
@@ -97,7 +103,9 @@ defmodule Sibt.Accounts do
 
   """
   def update_users(%User{} = users, attrs) do
-    raise "TODO"
+    users
+    |> User.changeset(attrs)
+    |> Repo.update()
   end
 
   @doc """
@@ -113,7 +121,7 @@ defmodule Sibt.Accounts do
 
   """
   def delete_users(%User{} = users) do
-    raise "TODO"
+    Repo.delete(users)
   end
 
   @doc """
@@ -126,6 +134,6 @@ defmodule Sibt.Accounts do
 
   """
   def change_users(%User{} = users) do
-    raise "TODO"
+    User.changeset(users, %{})
   end
 end
