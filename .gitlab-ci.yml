@@ -31,7 +31,8 @@ style_format:
 coverage:
   stage: coverage
   script:
-    - mix ecto.reset
+    - mix ecto.drop
+    - mix ecto.create
     - mix coveralls
 
 test:
