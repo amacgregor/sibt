@@ -37,7 +37,7 @@ defmodule SibtWeb.ProjectControllerTest do
     project
   end
 
-  # TODO: Fix test dependency on user session
+  # TO DO: Fix test dependency on user session
   # describe "index" do
   #   test "lists all projects", %{conn: conn} do
   #     conn = get(conn, Routes.project_path(conn, :index))
