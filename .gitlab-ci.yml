@@ -38,6 +38,8 @@ coverage:
 test:
   stage: test
   script:
-    - mix ecto.reset
+    - mix ecto.drop
+    - mix ecto.create
+    - mix ecto.migrate
     - mix test
 
