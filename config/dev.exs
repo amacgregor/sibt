@@ -110,6 +110,14 @@ config :git_ops,
     perf: [
       hidden?: false,
       header: "Improvements"
+    ],
+    format: [
+      hidden?: false,
+      header: "Improvements"
+    ],
+    documentation: [
+      hidden?: false,
+      header: "Improvements"
     ]
   ],
   # Instructs the tool to manage your mix version in your `mix.exs` file
