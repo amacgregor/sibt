@@ -2,44 +2,44 @@
 [![pipeline status](https://gitlab.com/bloccsio/shouldibuildthat/badges/master/pipeline.svg)](https://gitlab.com/bloccsio/shouldibuildthat/commits/master)
 [![coverage report](https://gitlab.com/bloccsio/shouldibuildthat/badges/master/coverage.svg)](https://gitlab.com/bloccsio/shouldibuildthat/commits/master)
 
-# Introduction
 - Add your project logo.
 - Write a short introduction to the project.
-- If you are using badges, add them here
+- If you are using badges, add them here.
 
-## :ledger: Index
+## Index
 
 - [ShouldIBuildThat.io (SIBT.IO)](#shouldibuildthatio-sibtio)
-- [Introduction](#introduction)
-  - [:ledger: Index](#ledger-index)
-  - [:beginner: About](#beginner-about)
-  - [:zap: Usage](#zap-usage)
-    - [:electric_plug: Installation](#electricplug-installation)
-    - [:package: Commands](#package-commands)
-  - [:wrench: Development](#wrench-development)
-    - [:notebook: Pre-Requisites](#notebook-pre-requisites)
-    - [:nut_and_bolt: Development Environment](#nutandbolt-development-environment)
-    - [:file_folder: File Structure](#filefolder-file-structure)
-    - [:hammer: Build](#hammer-build)
-    - [:rocket: Deployment](#rocket-deployment)
-  - [:cherry_blossom: Community](#cherryblossom-community)
-    - [:exclamation: Guideline](#exclamation-guideline)
-  - [:question: FAQ](#question-faq)
-  - [:page_facing_up: Resources](#pagefacingup-resources)
-  - [:camera: Gallery](#camera-gallery)
-  - [:star2: Credit/Acknowledgment](#star2-creditacknowledgment)
-  - [:lock: License](#lock-license)
+  - [Index](#index)
+  - [About](#about)
+  - [Usage](#usage)
+    - [Installation](#installation)
+    - [Commands](#commands)
+  - [Development](#development)
+    - [Pre-Requisites](#pre-requisites)
+    - [Development Environment](#development-environment)
+    - [File Structure](#file-structure)
+    - [Build](#build)
+    - [Deployment](#deployment)
+  - [Community](#community)
+    - [Contribution](#contribution)
+    - [Branches](#branches)
+    - [Guideline](#guideline)
+  - [FAQ](#faq)
+  - [Resources](#resources)
+  - [Gallery](#gallery)
+  - [Credit/Acknowledgment](#creditacknowledgment)
+  - [License](#license)
   - [Uberauth Setup](#uberauth-setup)
     - [Facebook](#facebook)
     - [Github](#github)
 
-##  :beginner: About
+## About
 Add a detailed introduction about the project here, everything you want the reader to know.
 
-## :zap: Usage
+## Usage
 Write about how to use this project.
 
-###  :electric_plug: Installation
+### Installation
 - Steps on how to install this project, to use it.
 - Be very detailed here, For example, if you have tools which run on different operating systems, write installation steps for all of them.
 
@@ -47,62 +47,41 @@ Write about how to use this project.
 $ add installations steps if you have to.
 ```
 
-###  :package: Commands
+### Commands
 - Commands to start the project.
 
-##  :wrench: Development
+## Development
 If you want other people to contribute to this project, this is the section, make sure you always add this.
 
-### :notebook: Pre-Requisites
+### Pre-Requisites
 List all the pre-requisites the system needs to develop this project.
 - A tool
 - B tool
 
-###  :nut_and_bolt: Development Environment
+### Development Environment
 Write about setting up the working environment for your project.
 - How to download the project...
 - How to install dependencies...
 
 
-###  :file_folder: File Structure
+### File Structure
 Add a file structure here with the basic details about files, below is an example.
-
-```
-.
-├── assets
-│   ├── css
-│   │   ├── index-ui.css
-│   │   └── rate-ui.css
-│   ├── images
-│   │   ├── icons
-│   │   │   ├── shrink-button.png
-│   │   │   └── umbrella.png
-│   │   ├── logo_144.png
-│   │   └── Untitled-1.psd
-│   └── javascript
-│       ├── index.js
-│       └── rate.js
-├── CNAME
-├── index.html
-├── rate.html
-└── README.md
-```
 
 | No | File Name | Details 
 |----|------------|-------|
 | 1  | index | Entry point
 
-###  :hammer: Build
+### Build
 Write the build Instruction here.
 
-### :rocket: Deployment
+### Deployment
 Write the deployment instruction here.
 
-## :cherry_blossom: Community
+## Community
 
 If it's open-source, talk about the community here, ask social media links and other links.
 
- ###  :fire: Contribution
+### Contribution
 
  Your contributions are always welcome and appreciated. Following are the things you can do to contribute to this project.
 
@@ -118,7 +97,7 @@ If it's open-source, talk about the community here, ask social media links and o
  > If you are new to open-source, make sure to check read more about it [here](https://www.digitalocean.com/community/tutorial_series/an-introduction-to-open-source) and learn more about creating a pull request [here](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github).
 
 
- ### :cactus: Branches
+### Branches
 
  I use an agile continuous integration methodology, so the version is frequently updated and development is really fast.
 
@@ -142,25 +121,24 @@ If it's open-source, talk about the community here, ask social media links and o
 After this, changes will be merged.
 
 
-### :exclamation: Guideline
+### Guideline
 coding guidelines or other things you want people to follow should follow.
 
 
-## :question: FAQ
+## FAQ
 You can optionally add a FAQ section about the project.
 
-##  :page_facing_up: Resources
+##  Resources
 Add important resources here
 
-##  :camera: Gallery
+##  Gallery
 Pictures of your project.
 
-## :star2: Credit/Acknowledgment
+## Credit/Acknowledgment
 Credit the authors here.
 
-##  :lock: License
+##  License
 Add a license here, or a link to it.
-
 
 ## Uberauth Setup
 
