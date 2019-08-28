@@ -3,7 +3,7 @@ defmodule SibtWeb.SessionController do
   use SibtWeb, :controller
   plug Ueberauth
 
-  alias Sibt.{Repo, User, Accounts}
+  alias Sibt.{Accounts, Repo, User}
 
   def create(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     {:ok, changeset} = Accounts.prepare_authenticated_user_changeset(auth)

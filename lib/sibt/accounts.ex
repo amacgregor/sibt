@@ -4,7 +4,8 @@ defmodule Sibt.Accounts do
   """
 
   import Ecto.Query, warn: false
-  alias Sibt.{User, Repo}
+
+  alias Sibt.{Repo, User}
 
   require Logger
 

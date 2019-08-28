@@ -26,7 +26,7 @@ defmodule Sibt.AccountsTest do
       provider: :github
     }
 
-    def github_user_fixture() do
+    def github_user_fixture do
       user_params = %{
         email: "tony@thetiger.com",
         first_name: "Tony",

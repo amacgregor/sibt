@@ -14,7 +14,8 @@ defmodule Sibt.TestHelpers do
       })
 
     {:ok, user} =
-      User.changeset(%User{}, params)
+      %User{}
+      |> User.changeset(params)
       |> Repo.insert()
 
     user
