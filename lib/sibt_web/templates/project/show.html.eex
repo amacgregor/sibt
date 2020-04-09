@@ -7,31 +7,45 @@
     </div>
 </header>
 <div class="container mx-auto mt-5 grid grid-cols-8 gap-4 grid-rows-2">
-    <div class="col-span-8">
-        <%= render "_project_stats.html", conn: @conn, project: @project%>
-        </div>
 
-      <div class="col-span-5 h-12 m-2 ml-0">
+    <div class="col-span-6 m-2 ml-0">
         <div class="bg-white p-1 shadow rounded-lg">
             <div class="bg-white px-2 py-2 border-b border-gray-200 sm:px-6">
               <h2 class="text-xl leading-6 font-bold text-gray-900">Description</h2>
             </div>
             <div class="px-4 py-5"><%= raw(@project.description) %></div>
         </div>
-      </div>
-      <div class="col-span-3 h-12 m-2 mr-0">
-          <div class="bg-white p-1 shadow rounded-lg">
-              <div class="bg-white px-2 py-2 border-b border-gray-200 sm:px-6">
-                <h2 class="text-xl leading-6 font-bold text-gray-900">Updates</h2>
-              </div>
-           </div>
-      </div>
-      <div class="col-span-8 bg-white p-1 mt-3 shadow rounded-lg">
-          <div class="bg-white px-2 py-2 border-b border-gray-200 sm:px-6">
-            <h2 class="text-xl leading-6 font-bold text-gray-900">Discussion</h2>
-          </div>
-          <div class="px-4 py-5">Pending Implementation</div>
-      </div>
+            <div class="col-span-6 bg-white p-1 mt-3 shadow rounded-lg">
+                <div class="bg-white px-2 py-2 border-b border-gray-200 sm:px-6">
+                    <h2 class="text-xl leading-6 font-bold text-gray-900">Discussion</h2>
+                </div>
+                <div id="hyvor-talk-view"></div>
+                <script type="text/javascript">
+                    var HYVOR_TALK_WEBSITE = 425;
+                    var HYVOR_TALK_CONFIG = {
+                        url: false,
+                        id: false
+                    };
+                </script>
+                <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+
+            </div>
+
+    </div>
+    <div class="col-span-2 m-2 mr-0">
+        <%= render "_project_stats.html", conn: @conn, project: @project%>
+
+                    <div class="bg-white mt-5 p-1 shadow rounded-lg">
+                      <div class="bg-white px-2 py-2 border-b border-gray-200 sm:px-6">
+                        <h2 class="text-xl leading-6 font-bold text-gray-900">Updates</h2>
+                      </div>
+                    </div>
+
+    </div>
+
+    <div class="col-span-2 m-2 mr-0">
+
+    </div>
 </div>
 
 
