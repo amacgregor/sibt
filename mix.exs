@@ -63,6 +63,7 @@ defmodule Sibt.MixProject do
       {:ueberauth, "~> 0.5"},
       {:ueberauth_facebook, "~> 0.7"},
       {:ueberauth_github, "~> 0.7"},
+      {:exgravatar, "~> 2.0"},
       {:credo, "~> 1.0.0"},
       {:excoveralls, "~> 0.11.2", only: :test},
       {:git_ops, "~> 0.6.0", only: [:dev]},

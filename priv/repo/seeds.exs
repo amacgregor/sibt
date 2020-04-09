@@ -52,3 +52,17 @@ Enum.each(1..10, fn x ->
 
   Operation.create_project(user, project_data)
 end)
+
+# Project for testing plus
+project_data = %{
+  project_id: Internet.slug(),
+  title: App.name(),
+  summary: Company.catch_phrase(),
+  description: Lorem.sentence(10..20),
+  like_count: 0,
+  view_count: 0,
+  subscriber_count: 0
+}
+
+Operation.create_project(user, project_data)
+

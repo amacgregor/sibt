@@ -4,6 +4,7 @@ defmodule Sibt.Accounts do
   """
 
   import Ecto.Query, warn: false
+  import Exgravatar
 
   alias Sibt.{Repo, User}
 
@@ -23,6 +24,7 @@ defmodule Sibt.Accounts do
       first_name: Enum.at(names, 0),
       last_name: Enum.at(names, 1),
       email: info.email,
+      gravatar_url:  Exgravatar.gravatar_url(info.email, s: 256),
       provider: Atom.to_string(auth.provider)
     }
 
@@ -37,8 +39,12 @@ defmodule Sibt.Accounts do
       first_name: info.first_name,
       last_name: info.last_name,
       email: info.email,
+      gravatar_url: Exgravatar.gravatar_url(info.email, s: 256),
       provider: Atom.to_string(auth.provider)
     }
+
+    IO.inspect(gravatar_url(info.email,  s: 256))
+    IO.inspect(user_params)
 
     {:ok, User.changeset(%User{}, user_params)}
   end

@@ -9,6 +9,7 @@ defmodule Sibt.User do
     field :last_name, :string
     field :provider, :string
     field :token, :string
+    field :gravatar_url, :string
 
     timestamps()
   end
@@ -16,7 +17,7 @@ defmodule Sibt.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:first_name, :last_name, :email, :provider, :token])
+    |> cast(attrs, [:first_name, :last_name, :email, :provider, :token, :gravatar_url])
     |> validate_required([:first_name, :last_name, :email, :provider, :token])
   end
 end

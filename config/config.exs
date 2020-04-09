@@ -50,10 +50,10 @@ config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
 
 config :sentry,
-  dsn: "https://cbb67e5040584a42a9959d5bdb4916ff@sentry.io/1515433",
+  dsn: "https://98cd8e7b1f6647b4adb8fc00d500e561@o285049.ingest.sentry.io/5195112",
   enable_source_code_context: true,
   root_source_code_path: File.cwd!(),
-  included_environments: ~w(production staging),
+  included_environments: ~w(production staging development),
   environment_name: System.get_env("RELEASE_LEVEL") || "development"
 
 # Import environment specific config. This must remain at the bottom
