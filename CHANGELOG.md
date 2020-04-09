@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.10.0](https://github.com/amacgregor/sibt/compare/0.9.0...0.10.0) (2020-4-9)
+
+
+
+
+### Features:
+
+* user project view and tailwindui
+
 ## [0.9.0](https://github.com/amacgregor/sibt/compare/0.8.2...0.9.0) (2020-4-9)
 
 
