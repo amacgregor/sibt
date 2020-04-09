@@ -1,5 +1,5 @@
 <div class="max-w-sm rounded overflow-hidden shadow-lg flex-1">
-  <img class="w-full" src="https://placeimg.com/800/500/tech?id=<%= @project.id %>" alt="Sunset in the mountains">
+  <img class="w-full" src="https://via.placeholder.com/800x500" alt="Sunset in the mountains">
   <div class="px-6 py-4 flex-row-reverse">
     <div class="font-bold text-xl mb-2">
         <%= @project.title %>

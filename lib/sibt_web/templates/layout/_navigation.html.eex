@@ -11,7 +11,7 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline">
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600">Browse Projects</a>
+                <%= link "Browse Projects", to: Routes.project_path(@conn, :index), class: "px-3 py-2 rounded-md text-sm font-medium text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600" %>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
               </div>
               <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
                 <div class="py-1 rounded-md bg-white shadow-xs">
-                  <%= link "Your Projects", to: Routes.project_path(@conn, :index), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
+                  <%= link "Your Projects", to: Routes.user_project_path(@conn, :index), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
                   <%= link "Sign Out", to: Routes.session_path(@conn, :delete), class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
                 </div>
               </div>

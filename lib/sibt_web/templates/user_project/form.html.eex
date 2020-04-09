@@ -1,0 +1,76 @@
+<div class="flex justify-center mt-10 xs:mx-4 sm:mx-0">
+  <%= form_for @changeset, @action, [class: "w-full max-w-md"], fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert bg-red-lighter border border-red-darker text-red-darker px-4 py-3 rounded relative">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+    <div class="bg-grey-lighter shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+      <div class="text-right"><span class="uppercase tracking-wide text-grey-darker text-sm font-bold mb-1">Code:</span><span id="project_code" class="uppercase tracking-wide text-xs font-bold mb-1"></div>
+
+      <div class="-mx-3 md:flex mb-6">
+        <div class="md:w-full px-3">
+          <%= label f, "Project Title", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+          <%= text_input f, :title , class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+          <%= error_tag f, :title %>
+        </div>
+      </div>
+      <div class="-mx-3 md:flex mb-6">
+        <div class="md:w-full px-3">
+          <%= label f, "Summary", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+          <%= text_input f, :summary, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+          <%= error_tag f, :summary %>
+        </div>
+      </div>
+      <div class="-mx-3 md:flex mb-6">
+          <div class="md:w-full px-3">
+            <%= label f, "Description", class: "block uppercase tracking-wide text-grey-darker text-xs font-bold mb-1" %>
+            <%= textarea f, :description, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+            <%= error_tag f, :description %>
+          </div>
+      </div>
+      <div class="-mx-3 md:flex mb-6">
+        <div class="md:w-full px-3">
+          <%= hidden_input f, :project_id, class: "appearance-none block w-full bg-tca-gray-2 text-tca-blue-8 border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" %>
+          <%= error_tag f, :project_id %>
+        </div>
+      </div> 
+      <div class="-mx-3 md:flex mb-2">
+        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+          <div>
+            <%= submit "Create Project", class: "bg-green-dark hover:bg-green-light text-white text-sm uppercase font-bold py-2 px-4 rounded shadow-md" %>
+            <%= link "Cancel", to: Routes.project_path(@conn, :index), data: [confirm: "Are you sure?"], class: "text-grey-darker text-sm uppercase font-bold no-underline px-4" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#project_description' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+<script>
+  var title = document.getElementById('project_title');
+  var project_code = document.getElementById('project_code');
+  var project_id = document.getElementById('project_project_id');
+  title.addEventListener('keyup', function (e) { 
+    project_code.textContent = slugify(title.value);
+    project_id.value = slugify(title.value);
+  });
+
+  function slugify(text)
+  {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
+ }
+</script>

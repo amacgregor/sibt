@@ -25,6 +25,12 @@ defmodule SibtWeb.Router do
     get "/project/:project_code", ProjectController, :show
   end
 
+  scope "/user/", SibtWeb do
+    pipe_through :browser
+
+    resources "/projects", UserProjectController, except: [:show]
+  end
+
   scope "/auth", SibtWeb do
     pipe_through :browser
 

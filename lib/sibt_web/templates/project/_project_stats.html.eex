@@ -1,0 +1,67 @@
+<div>
+  <div class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-indigo-500 text-white rounded-md p-3">
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="ml-5 w-0 flex-1">
+            <dl>
+              <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
+                Total Views
+              </dt>
+              <dd class="flex items-baseline">
+                <div class="text-2xl leading-8 font-semibold text-gray-900">
+                  <%= @project.view_count %>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-indigo-500 text-white rounded-md p-3">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="ml-5 w-0 flex-1">
+            <dl>
+              <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
+                Likes
+              </dt>
+              <dd class="flex items-baseline">
+                <div class="text-2xl leading-8 font-semibold text-gray-900">
+                  <%= @project.like_count %>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white overflow-hidden shadow rounded-lg">
+      <div class="px-4 py-5 sm:p-6">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 bg-indigo-500 text-white rounded-md p-3">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="ml-5 w-0 flex-1">
+            <dl>
+              <dt class="text-sm leading-5 font-medium text-gray-500 truncate">
+                Subscribers
+              </dt>
+              <dd class="flex items-baseline">
+                <div class="text-2xl leading-8 font-semibold text-gray-900">
+                  <%= @project.subscriber_count %>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,7 @@ user_data = [
     last_name: "MacGregor",
     email: "amacgregor@allanmacgregor.com",
     provider: "facebook",
+    gravatar_url: "https://secure.gravatar.com/avatar/b64d0da0dffd4028635446e4cfbc0cee?s=256",
     token: "EAAErXxTO4j8BABUnZCqD"
   },
   %{
@@ -37,7 +38,7 @@ Enum.each(user_data, fn data ->
   Repo.insert(changeset)
 end)
 
-user = Repo.get(User, 1)
+user = Repo.get(User, 2)
 
 Enum.each(1..10, fn x ->
   project_data = %{
@@ -53,6 +54,7 @@ Enum.each(1..10, fn x ->
   Operation.create_project(user, project_data)
 end)
 
+user = Repo.get(User, 1)
 # Project for testing plus
 project_data = %{
   project_id: Internet.slug(),

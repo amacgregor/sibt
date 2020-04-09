@@ -1,4 +1,4 @@
-defmodule SibtWeb.ProjectController do
+defmodule SibtWeb.UserProjectController do
   use SibtWeb, :controller
 
   alias Sibt.Operation
@@ -7,8 +7,11 @@ defmodule SibtWeb.ProjectController do
   plug SibtWeb.Plugs.RegisterView when action in [:show]
 
   def index(conn, _params) do
+    current_user = conn.assigns[:user]
+
     rows =
-      Operation.list_projects()
+      current_user.id
+      |> Operation.list_projects()
       |> Enum.chunk_every(3)
 
     render(conn, "index.html", rows: rows)
