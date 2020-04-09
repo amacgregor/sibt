@@ -5,6 +5,23 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.9.0](https://github.com/amacgregor/sibt/compare/0.8.2...0.9.0) (2020-4-9)
+
+
+
+
+### Features:
+
+* New Version and improvements
+
+### Important Changes:
+
+* Conversion to TailwindUI
+
+### Improvements:
+
+* clean up app based on credo feedback
+
 ## [0.8.2](https://gitlab.com/amacgregor/shouldibuildthat/compare/0.8.1...0.8.2) (2019-8-26)
 
 
