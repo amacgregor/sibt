@@ -79,7 +79,7 @@ config :sibt, Sibt.Repo,
 config :git_ops,
   mix_project: Sibt.MixProject,
   changelog_file: "CHANGELOG.md",
-  repository_url: "https://gitlab.com/amacgregor/shouldibuildthat",
+  repository_url: "https://github.com/amacgregor/sibt",
   types: [
     # Makes an allowed commit type called `tidbit` that is not
     # shown in the changelog

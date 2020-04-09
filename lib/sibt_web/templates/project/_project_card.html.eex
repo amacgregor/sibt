@@ -10,7 +10,7 @@
     </p>
   </div>
   <div class="px-6 flex flex-row-reverse">
-    <%= link "View Details", to: Routes.project_path(@conn, :show, @project.project_id), class: "text-l font-semibold rounded px-4 py-1 leading-normal bg-purple border border-purple text-white hover:bg-purple hover:text-white" %>
+    <%= link "View Details", to: Routes.project_path(@conn, :show, @project.project_id), class: "text-l font-semibold rounded px-4 py-1 leading-normal bg-indigo-700 border border-purple text-white hover:bg-indigo-700 hover:text-white" %>
   </div>
   <div class="px-6 py-4 flex items-end">
     <span class="flex-1 bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><i class="fas fa-eye"></i> <%= @project.view_count %></span>
