@@ -5,6 +5,19 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [0.11.0](https://github.com/amacgregor/sibt/compare/0.10.0...0.11.0) (2020-4-10)
+
+
+
+
+### Features:
+
+* improved project view
+
+### Bug Fixes:
+
+* update comment system and project
+
 ## [0.10.0](https://github.com/amacgregor/sibt/compare/0.9.0...0.10.0) (2020-4-9)
 
 
